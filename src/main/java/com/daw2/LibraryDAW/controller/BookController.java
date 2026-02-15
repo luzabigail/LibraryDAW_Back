@@ -39,9 +39,11 @@ public class BookController {
     //GET /books - Status 200 OK automático
     @GetMapping
     public List<Book> getAllBooks() {
+    	
+
         return bookService.getAllBooks();
     }
-    
+     
     //GET / books/{id} - Status 200 si existe, 404 si no
     @GetMapping("/{id}")
     public Book getBookById(@PathVariable Long id) {
