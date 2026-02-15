@@ -20,6 +20,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     
     List<Book> findByTitleContainingIgnoreCase(String title);
     
+    List<Book> findByTitleAndAutor(String title, String author);
+    
     @Query("SELECT b FROM Book b WHERE b.year BETWEEN :startYear AND :endYear")
     List<Book> findBooksByYearRange(@Param("startYear") Integer startYear, 
                                      @Param("endYear") Integer endYear);
